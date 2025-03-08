@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import projects from '../../../../data/projects.json';
+import projects from 'data/projects.json';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

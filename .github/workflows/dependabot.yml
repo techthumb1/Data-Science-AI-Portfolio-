@@ -1,0 +1,15 @@
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # Runs every Monday at midnight UTC
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable Dependabot for npm updates
+        uses: dependabot/dependabot-action@v2
+        with:
+          package-ecosystem: "npm"
+          directory: "/"
+          open-pull-requests-limit: 10
+          token: ${{ secrets.NETLIFY_AUTH_TOKEN }}

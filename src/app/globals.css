@@ -1,0 +1,88 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Professional Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #2C3E50;
+  --secondary: #ECEFF4;
+  --accent: #1C2833;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --primary: #1C2833;
+    --secondary: #2C3E50;
+    --accent: #ECEFF4;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Playfair Display', serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Enhanced Button Styling */
+button {
+  background: var(--accent);
+  color: #ffffff;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Layout Spacing */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navigation */
+nav {
+  background: var(--primary);
+  color: #ffffff;
+  padding: 12px 0;
+}
+
+nav a {
+  margin: 0 15px;
+  color: #ffffff;
+}
+
+nav a:hover {
+  color: var(--secondary);
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: #ffffff;
+  text-align: center;
+  padding: 15px 0;
+}

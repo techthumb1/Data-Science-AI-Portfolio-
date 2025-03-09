@@ -1,15 +1,40 @@
-on:
-  schedule:
-    - cron: '0 0 * * 1'  # Runs every Monday at midnight UTC
-
-jobs:
-  dependabot:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Enable Dependabot for npm updates
-        uses: dependabot/dependabot-action@v2
-        with:
-          package-ecosystem: "npm"
-          directory: "/"
-          open-pull-requests-limit: 10
-          token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+version: 2
+updates:
+- package-ecosystem: "npm"
+directory: "/" 
+schedule:
+    interval: "weekly"
+open-pull-requests-limit: 10
+labels:
+    - dependencies
+    - automerge
+commit-message:
+    prefix: "deps"
+    prefix-development: "dev-deps"
+    include: "scope"
+reviewers:
+    - techthumb1
+assignees:
+    - techthumb1
+ignore:
+    - dependency-name: "eslint"
+        versions: ["<8.0.0"]
+        
+    - dependency-name: "typescript"
+        versions: ["<5.0.0"]
+    
+    - package-ecosystem: "github-actions"
+directory: "/"
+schedule:
+    interval: "monthly"
+open-pull-requests-limit: 5
+labels:
+    - dependencies
+    - github-actions
+reviewers:
+    - techthumb1
+assignees:
+    - techthumb1
+ignore:
+    - dependency-name: "actions/setup-node"
+      versions: ["<3.0.0"]

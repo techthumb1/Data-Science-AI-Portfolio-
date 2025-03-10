@@ -19,12 +19,16 @@ export default function HomePage() {
           Elevating insights through cutting-edge machine learning and analytics.
           Explore innovative projects that push boundaries.
         </p>
-        <div className="mt-6 flex justify-center">
+        <div className="mt-6 flex justify-center">  {/* Center the button */}
           <Link href="/projects">
-            <Button>View Projects</Button>
+            <button className="bg-[#1C2833] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[#2C3E50] transition">
+              View Projects
+            </button>
           </Link>
         </div>
       </section>
+
+      
 
       {/* Featured Projects Section */}
       <section className="bg-[#F8F9FA] py-16">
